@@ -131,7 +131,7 @@ var display = {
     },
 
     updateUpgrades: function() {
-        document.getElementById("upgradeContainer").innerHTML == "";
+        document.getElementById("upgradeContainer").innerHTML = "";
         for (i = 0; i < upgrade.name.length; i++) {
             if (!upgrade.purchased[i]) {
                 if (upgrade.type[i] == "building" && building.count[upgrade.buildingIndex[i]] >= upgrade.requirement[i]) {
