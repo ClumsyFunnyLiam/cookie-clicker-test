@@ -26,26 +26,30 @@ var building = {
         "Cursor",
         "Grandma",
         "Oven",
-        "Bakery"
+        "Bakery",
+        "Factory"
     ],
     image: [
         "cursor.png",
         "grandma.png",
         "oven.png",
-        "bakery.png"
+        "bakery.png",
+        "factory.png"
     ],
-    count: [0, 0, 0, 0],
+    count: [0, 0, 0, 0, 0],
     income: [
         1,
         10,
         100,
-        1000
+        1000,
+        10000
     ],
     cost: [
         10,
         100,
         1000,
-        10000
+        10000,
+        100000
     ],
 
     purchase: function(index) {
@@ -62,38 +66,167 @@ var building = {
 
 var upgrade = {
     name: [
+        // mouse click upgrades
         "paper clicks",
-        "paper cursor"
+        "wood mouse",
+        "gold mouse",
+        "metal mouse",
+        "code mouse",
+        // cursor upgrades
+        "paper cursor",
+        "double paper cursor",
+        "fabric cursor",
+        "double fabric cursor",
+        "metal cursor",
+        "double metal cursor"
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     description: [
+        // mouse click upgrades
         "paper clicks is just a pun of paper clips, also makes you click better, 2 times better",
-        "paper am i right. also i do need to disclose this, it makes your cursors 100% better"
+        "wood mouse, idk why its wood, you click 2 times better",
+        "gold? ok. thats just dumb. 2 times better clicks",
+        "metal? fine, i guess, 2 times better clicks",
+        "hacker man. ok. 100% more effcient clicks",
+        // cursor upgrades
+        "paper am i right. also i do need to disclose this, it makes your cursors 100% better",
+        "double the paper double the power, it makes your cursors 2x efficient",
+        "fabric? fabric better than paper? ok, well... it makes your cursors 2x efficient",
+        "well... its 2 times the fabric, so it makes your cursors 2x efficient",
+        "metal. yeah. thats what im talking about, wait get this. it makes your cursors 4x efficient",
+        "double the metal means double the petal. well that sounded better in my head. anywayit makes your cursors 4x efficient"
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     image: [
+        // mouse click upgrades
         "you.png",
-        "cursor.png"
+        "mouse.png",
+        "mouse.png",
+        "mouse.png",
+        "upgrades/mouse/hacker-mouse.png",
+        // cursor upgrades
+        "upgrades/cursors/paper-cursor.png",
+        "upgrades/cursors/double-paper-cursor.png",
+        "upgrades/cursors/fabric-cursor.png",
+        "upgrades/cursors/double-fabric-cursor.png",
+        "upgrades/cursors/metal-cursor.png",
+        "upgrades/cursors/double-metal-cursor.png"
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     type: [
+        // mouse click upgrades
         "click",
+        "click",
+        "click",
+        "click",
+        "click",
+        // cursor upgrades
+        "building",
+        "building",
+        "building",
+        "building",
+        "building",
         "building"
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     cost: [
+        // mouse click upgrades
         50,
-        250
+        250,
+        500,
+        750,
+        1250,
+        // cursor upgrades
+        250,
+        500,
+        1000,
+        2500,
+        10000,
+        50000
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     buildingIndex: [
+        // mouse click upgrades
         -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        // cursor upgrades
         0,
+        0,
+        0,
+        0,
+        0,
+        0
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     requirement: [
+        // mouse click upgrades
         1,
+        50,
+        100,
+        200,
+        500,
+        // cursor upgrades
         1,
+        5,
+        10,
+        25,
+        50,
+        100
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
     bonus: [
+        // mouse click upgrades
         2,
-        2
+        2,
+        2,
+        2,
+        2,
+        // cursor upgrades
+        2,
+        2,
+        2,
+        2,
+        4,
+        4
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
     ],
-    purchased: [false, false],
+    purchased: [
+        // mouse click upgrades
+        false,
+        false,
+        false,
+        false,
+        false,
+        // cursor upgrades
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+        // grandma upgrades
+        // bakery upgrades
+        // factory upgrades
+    ],
 
     purchase: function(index) {
         if (!this.purchased[index] && game.score >= this.cost[index]) {
