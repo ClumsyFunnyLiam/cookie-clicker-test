@@ -97,11 +97,20 @@
 
 #upgradeContainer img {
 
-    background-color: rgba(150, 250, 220, 0.7);
 
     height: 64px;
     width: 64px;
     background-color: rgba(62, 62, 62, .7);
+    border-radius: 10px;
+
+}
+
+#achievementContainer img {
+
+
+    height: 64px;
+    width: 64px;
+    background-color: rgba(150, 250, 220, 0.3);
     border-radius: 10px;
 
 }

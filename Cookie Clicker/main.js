@@ -40,27 +40,27 @@ var building = {
     ],
     count: [0, 0, 0, 0, 0, 0],
     income: [
+        0.1,
         1,
         10,
         100,
         1000,
-        10000,
-        100000
+        10000
     ],
     cost: [
-        10,
+        15,
         100,
         1000,
-        10000,
-        100000,
-        1000000
+        15000,
+        250000,
+        5000000
     ],
 
     purchase: function(index) {
         if (game.score >= this.cost[index]) {
             game.score -= this.cost[index];
             this.count[index]++; // means the same as += 1  
-            this.cost[index] = Math.round(Math.ceil(this.cost[index] * 1.15));
+            this.cost[index] = Math.ceil(this.cost[index] * 1.15);
             display.updateScore();
             display.updateShop();
             display.updateUpgrades();
@@ -261,6 +261,36 @@ var upgrade = {
         }
     }
 }
+
+var achievement = {
+    name: [
+        "A New Beginning",
+        "Paper clicks",
+        "Start-up",
+        "Finger Man"
+    ],
+    description: [
+
+    ],
+    image: [
+
+    ],
+    type: [
+
+    ],
+    requirement: [
+
+    ],
+    objectIndex: [
+
+    ],
+    awared: [],
+
+    earn: function(index) {
+        this.awared[index] = true;
+
+    }
+};
 
 var display = {
     updateScore: function() {
