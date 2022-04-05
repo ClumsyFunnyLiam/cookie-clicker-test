@@ -1,8 +1,11 @@
 .sectionLeft {
+    background-color: rgba(200, 255, 255, 0.5);
     float: left;
     width: 80%;
 }
 .sectionRight {
+    background-color: rgba(170, 188, 190, 0.3);
+    border-radius: 10px;
     float: right;
     width: 20%;
 }
@@ -71,6 +74,7 @@
 }
 
 .sectionFooter {
+    background-color: rgba(225, 225, 225, 0.4);
     margin-top: 20%;
 }
 
@@ -92,6 +96,8 @@
 }
 
 #upgradeContainer img {
+
+    background-color: rgba(150, 250, 220, 0.7);
 
     height: 64px;
     width: 64px;

@@ -24,39 +24,43 @@ var game = {
 var building = {
     name: [
         "Cursor",
-        "Grandma",
+        "Grandmar",
         "Oven",
         "Bakery",
-        "Factory"
+        "Factory",
+        "City"
     ],
     image: [
         "cursor.png",
         "grandma.png",
         "oven.png",
         "bakery.png",
-        "factory.png"
+        "factory.png",
+        "city.png"
     ],
-    count: [0, 0, 0, 0, 0],
+    count: [0, 0, 0, 0, 0, 0],
     income: [
         1,
-        10,
-        100,
-        1000,
-        10000
-    ],
-    cost: [
         10,
         100,
         1000,
         10000,
         100000
     ],
+    cost: [
+        10,
+        100,
+        1000,
+        10000,
+        100000,
+        1000000
+    ],
 
     purchase: function(index) {
         if (game.score >= this.cost[index]) {
             game.score -= this.cost[index];
             this.count[index]++; // means the same as += 1  
-            this.cost[index] = Math.ceil(this.cost[index] * 1.15);
+            this.cost[index] = Math.round(Math.ceil(this.cost[index] * 1.15));
             display.updateScore();
             display.updateShop();
             display.updateUpgrades();
@@ -82,6 +86,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     description: [
         // mouse click upgrades
@@ -100,6 +105,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     image: [
         // mouse click upgrades
@@ -118,6 +124,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     type: [
         // mouse click upgrades
@@ -136,6 +143,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     cost: [
         // mouse click upgrades
@@ -154,6 +162,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     buildingIndex: [
         // mouse click upgrades
@@ -172,6 +181,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     requirement: [
         // mouse click upgrades
@@ -190,6 +200,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     bonus: [
         // mouse click upgrades
@@ -208,6 +219,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
     purchased: [
         // mouse click upgrades
@@ -226,6 +238,7 @@ var upgrade = {
         // grandma upgrades
         // bakery upgrades
         // factory upgrades
+        // city upgrades
     ],
 
     purchase: function(index) {
@@ -344,10 +357,10 @@ window.onload = function() {
 };
 
 setInterval(function() {
-    game.score += game.getScorePerSecond();
-    game.totalScore += game.getScorePerSecond();
+    game.score += (game.getScorePerSecond() * 0.5);
+    game.totalScore += (game.getScorePerSecond() * 0.5);
     display.updateScore();
-},1000); // 1000ms = 1 second
+},500); // 500ms = 0.5 seconds
 
 setInterval(function() {
     display.updateScore();
